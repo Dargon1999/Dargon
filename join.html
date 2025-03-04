@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Игровая Семья Family Dargon - Заявка</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="overlay"></div>
+    <header>
+        <nav class="fixed-nav">
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="team.html">Состав</a></li>
+                <li><a href="join.html">Заявка в семью</a></li>
+                <li><a href="contact.html">Связь с лидером</a></li>
+                <li><a href="gallery.html">Фотогалерея</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="form-section">
+            <h1>Заявка в семью</h1>
+            <form id="join-form" onsubmit="submitForm(event)">
+                <label for="realName">Ваше имя: [OOC]</label>
+                <input type="text" id="realName" required>
+                
+                <label for="ageOOC">Сколько вам лет? [OOC]</label>
+                <input type="number" id="ageOOC" required>
+                
+                <label for="location">Откуда вы? [OOC]</label>
+                <input type="text" id="location" required>
+                
+                <label for="timezone">Ваш часовой пояс: [OOC]</label>
+                <input type="text" id="timezone" required>
+                
+                <label for="averageOnline">Ваш средний онлайн:</label>
+                <select id="averageOnline" required>
+                    <option value="">Выберите время</option>
+                    <option value="1-3">1-3 часа</option>
+                    <option value="4-6">4-6 часов</option>
+                    <option value="6-8">6-8 часов</option>
+                    <option value="8+">8 и более часов</option>
+                </select>
+                
+                <label for="moveWithFamily">Готовы ли вы двигаться вместе с семьей?</label>
+                <select id="moveWithFamily" required>
+                    <option value="">Выберите ответ</option>
+                    <option value="Да">Да</option>
+                    <option value="Нет">Нет</option>
+                </select>
+                
+                <label for="bestSkill">Что у вас получается больше всего?</label>
+                <select id="bestSkill" required onchange="toggleOtherSkill(this)">
+                    <option value="">Выберите навык</option>
+                    <option value="Стрелять">Стрелять</option>
+                    <option value="Выполнять контракты">Выполнять контракты</option>
+                    <option value="Коммуницировать с людьми">Коммуницировать с людьми</option>
+                    <option value="Исполнять лидерские качества">Исполнять лидерские качества</option>
+                    <option value="Следить за людьми">Следить за людьми</option>
+                    <option value="Другое">Другое</option>
+                </select>
+                <div id="otherSkillField" style="display: none;">
+                    <label for="otherSkillInput">Укажите свой вариант:</label>
+                    <input type="text" id="otherSkillInput" name="otherSkillInput">
+                </div>
+                
+                <label for="preference">Что вы предпочитаете:</label>
+                <select id="preference" required>
+                    <option value="">Выберите предпочтение</option>
+                    <option value="Крайм">Крайм</option>
+                    <option value="Госка">Госка</option>
+                    <option value="Оба">Оба</option>
+                </select>
+                
+                <label for="previousOrganizations">В каких организациях ранее состояли:</label>
+                <textarea id="previousOrganizations" required></textarea>
+                
+                <label for="discord">Ваш Discord:</label>
+                <input type="text" id="discord" required>
+                
+                <button type="submit">Отправить</button>
+            </form>
+            <p id="status" style="color: #00ffcc;"></p>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 Игровая Семья Family Dargon. Все права защищены.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

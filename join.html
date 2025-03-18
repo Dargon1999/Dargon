@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Семья Family Dargon - Заявка</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body id="join">
+    <div class="overlay"></div>
+    <header>
+        <nav class="fixed-nav">
+            <ul>
+                <li><a href="index.html" title="Главная"><svg width="24" height="24" viewBox="0 0 24 24" fill="#fff"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></a></li>
+                <li><a href="team.html" title="Состав"><svg width="24" height="24" viewBox="0 0 24 24" fill="#fff"><path d="M16 11c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 3-1.34 3-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></a></li>
+                <li><a href="join.html" title="Заявка в семью"><svg width="24" height="24" viewBox="0 0 24 24" fill="#fff"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></a></li>
+                <li><a href="contact.html" title="Связь с лидером"><svg width="24" height="24" viewBox="0 0 24 24" fill="#fff"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></a></li>
+                <li><a href="gallery.html" title="Фотогалерея"><svg width="24" height="24" viewBox="0 0 24 24" fill="#fff"><path d="M22 2H2v20h20V2zM7 17l3-4 3 3 4-5 3 6H7z"/></svg></a></li>
+                <li><a href="vehicles.html" title="Транспорт"><svg width="24" height="24" viewBox="0 0 24 24" fill="#fff"><path d="M18 4H6v10h12V4zM4 16h16v2H4v-2zm-2 4h20v2H2v-2z"/></svg></a></li>
+                <li class="user-icon" id="userIconContainer">
+                    <svg id="userIcon" width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="11" stroke="#fff" stroke-width="2"/>
+                        <path d="M12 6a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm-4 10v2h8v-2a4 4 0 0 0-8 0z" fill="#fff"/>
+                    </svg>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="form-section">
+            <h1>Заявка в семью</h1>
+            <form id="join-form" onsubmit="submitForm(event)">
+                <label for="realName">Ваше имя: [OOC]</label>
+                <input type="text" id="realName" name="realName" required>
+                <label for="ageOOC">Сколько вам лет? [OOC]</label>
+                <input type="number" id="ageOOC" name="ageOOC" required>
+                <label for="location">Откуда вы? [OOC]</label>
+                <input type="text" id="location" name="location" required>
+                <label for="timezone">Ваш часовой пояс: [OOC]</label>
+                <input type="text" id="timezone" name="timezone" required>
+                <label for="averageOnline">Ваш средний онлайн:</label>
+                <select id="averageOnline" name="averageOnline" required>
+                    <option value="">Выберите время</option>
+                    <option value="1-3">1-3 часа</option>
+                    <option value="4-6">4-6 часов</option>
+                    <option value="6-8">6-8 часов</option>
+                    <option value="8+">8 и более часов</option>
+                </select>
+                <label for="moveWithFamily">Готовы ли вы двигаться вместе с семьей?</label>
+                <select id="moveWithFamily" name="moveWithFamily" required>
+                    <option value="">Выберите ответ</option>
+                    <option value="Да">Да</option>
+                    <option value="Нет">Нет</option>
+                </select>
+                <label for="bestSkill">Что у вас получается больше всего?</label>
+                <select id="bestSkill" name="bestSkill" required onchange="toggleOtherSkill(this)">
+                    <option value="">Выберите навык</option>
+                    <option value="Стрелять">Стрелять</option>
+                    <option value="Выполнять контракты">Выполнять контракты</option>
+                    <option value="Коммуницировать с людьми">Коммуницировать с людьми</option>
+                    <option value="Исполнять лидерские качества">Исполнять лидерские качества</option>
+                    <option value="Следить за людьми">Следить за людьми</option>
+                    <option value="Другое">Другое</option>
+                </select>
+                <div id="otherSkillField" style="display: none;">
+                    <label for="otherSkillInput">Укажите свой вариант:</label>
+                    <input type="text" id="otherSkillInput" name="otherSkillInput">
+                </div>
+                <label for="preference">Что вы предпочитаете:</label>
+                <select id="preference" name="preference" required>
+                    <option value="">Выберите предпочтение</option>
+                    <option value="Крайм">Крайм</option>
+                    <option value="Госка">Госка</option>
+                    <option value="Оба">Оба</option>
+                </select>
+                <label for="previousOrganizations">В каких организациях ранее состояли:</label>
+                <textarea id="previousOrganizations" name="previousOrganizations" required></textarea>
+                <label for="discord">Ваш Discord:</label>
+                <input type="text" id="discord" name="discord" required>
+                <button type="submit">Отправить</button>
+            </form>
+            <p id="status" style="color: #00ffcc;"></p>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 Семья Family Dargon. Все права защищены.</p>
+    </footer>
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLoginModal()">×</span>
+            <h2>Вход</h2>
+            <input type="text" id="username" placeholder="Логин" required>
+            <input type="password" id="password" placeholder="Пароль" required>
+            <button onclick="login()">Войти</button>
+            <p id="loginStatus"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        function toggleOtherSkill(select) {
+            const otherSkillField = document.getElementById('otherSkillField');
+            if (select.value === 'Другое') {
+                otherSkillField.style.display = 'block';
+            } else {
+                otherSkillField.style.display = 'none';
+                document.getElementById('otherSkillInput').value = '';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const userIconContainer = document.getElementById('userIconContainer');
+            if (userIconContainer) {
+                userIconContainer.addEventListener('click', showLoginModal);
+                userIconContainer.style.cursor = 'pointer';
+            }
+        });
+    </script>
+</body>
+</html>
